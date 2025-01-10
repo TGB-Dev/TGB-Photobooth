@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TGB-Photobooth (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "TGB-Photobooth (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
