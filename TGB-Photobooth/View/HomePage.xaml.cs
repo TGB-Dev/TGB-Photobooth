@@ -1,17 +1,6 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using TGB_Photobooth.ViewModel;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -25,15 +14,27 @@ public sealed partial class HomePage : Page
     public HomePage()
     {
         this.InitializeComponent();
+
+        DataContext = new HomePageViewModel();
     }
 
     private void ChooseFileButton_Click(object sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        ((HomePageViewModel)DataContext).ChooseFrame();
     }
-    
+
     private void ChooseFolderButton_Click(object sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        ((HomePageViewModel)DataContext).ChooseDestinationFolder();
+    }
+
+    private void ChooseImagesButton_Click(object sender, RoutedEventArgs e)
+    {
+        ((HomePageViewModel)DataContext).ChooseImagesFolder();
+    }
+
+    private void StartButton_Click(object sender, RoutedEventArgs e)
+    {
+        ((HomePageViewModel)DataContext).StartTakingSession();
     }
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="TGB_Photobooth.View.ChooseImagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TGB_Photobooth.View"
+    xmlns:viewModel="using:TGB_Photobooth.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+
+    <Page.DataContext>
+        <viewModel:ChooseImagePageViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Canvas Grid.ColumnSpan="4" x:Name="ImageCanvas">
+            <Image x:Name="Image1" Width="300" Canvas.Top="45" Canvas.Left="25" />
+            <Image x:Name="Image2" Width="300" Canvas.Top="242.5" Canvas.Left="25" />
+            <Image x:Name="Image3" Width="300" Canvas.Top="470" Canvas.Left="25" />
+            <Image x:Name="Image4" Width="300" Canvas.Top="680" Canvas.Left="25" />
+            <Image x:Name="ImageFrame" Source="{Binding FramePath}" Stretch="Uniform" Width="350" />
+        </Canvas>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1">
+            <Grid x:Name="ImagesGrid" />
+        </ScrollViewer>
+
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="SelectedImagesView">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Button x:Name="SaveButton" Style="{StaticResource AccentButtonStyle}" Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Margin="0, 8, 0, 0" Click="SaveButton_Click">
+                Process
+            </Button>
+        </Grid>
+
+        <Button x:Name="BackButton" Click="BackButton_Click" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="3">
+            Back
+        </Button>
+    </Grid>
+</Page>

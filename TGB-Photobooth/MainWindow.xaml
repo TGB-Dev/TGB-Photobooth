@@ -10,5 +10,5 @@
     mc:Ignorable="d"
     Title="TGB-Photobooth">
 
-    <view:HomePage />
+    <Frame x:Name="MainFrame" />
 </Window>

@@ -1,20 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using Microsoft.UI.Xaml;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -46,5 +30,9 @@ namespace TGB_Photobooth
         }
 
         private Window? m_window;
+        public Window? Window { get => m_window; }
+        public string FramePath { get; set; } = @"D:\frame.png";
+        public string DestinationFolderPath { get; set; } = @"D:\dest";
+        public string ImagesFolderPath { get; set; } = @"C:\Users\bm\Desktop\tgb";
     }
 }
